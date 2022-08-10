@@ -54,7 +54,7 @@ const TopArtistsMediumTerm = () => {
 
   return (
     <div>
-      <h1>Top Artists of {user.display_name} (All time)</h1>
+      <h1>Top Artists of {user.display_name} (Last 6 months)</h1>
       <TimeRangeNavArtists></TimeRangeNavArtists>
       <ul className="artist-table">
         {data?.items
