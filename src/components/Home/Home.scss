@@ -1,0 +1,38 @@
+.home {
+  background-color: rgba(105, 105, 105, 0.219);
+  text-align: center;
+  padding: 3rem 1.6rem;
+  border-radius: 6px;
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  .login-btn {
+    cursor: pointer;
+    background-color: rgb(30, 215, 96);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    border: none;
+    border-radius: 40px;
+    padding: 1.2rem 4rem;
+  }
+}
+
+@media (hover: hover) {
+  .login-btn {
+    &:hover {
+      filter: none;
+      box-shadow: 0px 2px 15px 4px rgb(30, 215, 96);
+      transform: scale(1.03);
+      transition: all 300ms ease;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.term-filter {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  li {
+    width: 33.3%;
+    text-align: center;
+  }
+  margin: 1.2rem 0 2rem;
+
+  li {
+    background-color: rgba(255, 255, 255, 0.253);
+    border-radius: 4px;
+    margin: 0 1rem;
+    padding: 0.4rem 0;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.651);
+    text-decoration: none;
+
+    &:hover {
+      color: rgb(255, 255, 255);
+      transition: all 0.25s ease;
+    }
+  }
+}

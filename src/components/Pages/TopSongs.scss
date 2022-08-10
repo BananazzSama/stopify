@@ -1,0 +1,123 @@
+div {
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    padding: 0;
+  }
+}
+
+.item-list {
+  display: flex;
+  margin-bottom: 1.4rem;
+  align-items: center;
+}
+
+.item-index {
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.1rem;
+  width: 1.6rem;
+  margin-right: 1rem;
+}
+
+.item-album {
+  display: none;
+}
+
+.item-image {
+  cursor: pointer;
+  max-width: 20%;
+  height: auto;
+  margin-right: 1.6rem;
+
+  img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    img {
+      filter: brightness(40%);
+      transition: all 0.25s ease;
+    }
+  }
+}
+
+.item-trackInfo {
+  display: flex;
+  flex-direction: column;
+
+  .item-title {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.item-artistInfo {
+  span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.562);
+  }
+}
+
+@media screen and (min-width: 571px) {
+  .item-image {
+    cursor: pointer;
+    max-width: 13%;
+    height: auto;
+    margin-right: 1.6rem;
+
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .item-image {
+    cursor: pointer;
+    max-width: 8%;
+    height: auto;
+    margin-right: 1.6rem;
+
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .item-image {
+    cursor: pointer;
+    max-width: 6%;
+    height: auto;
+    margin-right: 1.6rem;
+
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  .item-album {
+    display: flex;
+  }
+
+  .item-trackInfo {
+    display: flex;
+    flex-direction: row;
+
+    .item-title {
+      width: 50rem;
+    }
+
+    .item-album {
+      display: none;
+    }
+  }
+}

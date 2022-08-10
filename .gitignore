@@ -18,6 +18,11 @@
 .env.test.local
 .env.production.local
 
+/src/config.json
+bckup
+bckup.scss
+main.backup.scss
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

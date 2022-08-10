@@ -1,0 +1,84 @@
+div {
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    padding: 0;
+  }
+}
+
+.artist-table {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.artist-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.4rem;
+  align-items: center;
+  text-align: center;
+}
+
+.artist-index {
+  list-style: none;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  width: 1.6rem;
+}
+
+.artist-image {
+  cursor: pointer;
+  border-radius: 50%;
+  max-width: 80%;
+  height: auto;
+
+  img {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    width: 320px;
+    max-width: 100%;
+  }
+
+  &:hover {
+    img {
+      filter: brightness(40%);
+      transition: all 0.25s ease;
+    }
+  }
+}
+
+.artist-title {
+  font-size: 0.9rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .artist-image {
+    max-width: 60%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .artist-table {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  .artist-image {
+    max-width: 50%;
+    height: auto;
+  }
+
+  .artist-title {
+    font-size: 1.3rem;
+    margin: 0;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+}
