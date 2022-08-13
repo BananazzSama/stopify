@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import TimeRangeNav from "../NavBar/TimeRangeNav";
 import "./TopSongs.scss";
+import { Spinner } from "react-bootstrap";
 
 const TOPSONGS_ENDPOINT = "https://api.spotify.com/v1/me/top/tracks";
 const LONG_TERM = "time_range=long_term";
@@ -10,7 +11,7 @@ const SHORT_TERM = "time_range=short_term";
 
 const TopSongs = () => {
   const [token, setToken] = useState("");
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -56,35 +57,41 @@ const TopSongs = () => {
     <div>
       <h1>Top Tracks of {user.display_name} (All time)</h1>
       <TimeRangeNav></TimeRangeNav>
-      <ul>
-        {data?.items
-          ? data.items.map((item, index) => (
-              <li key={item.id} className="item-list">
-                <span className="item-index">{index + 1}</span>
-                <a
-                  className="item-image"
-                  href={`https://open.spotify.com/track/${item.id}`}
-                  target="_blank"
-                >
-                  <img src={item.album.images[1].url} alt={item.album.name} />
-                </a>
-                <div className="item-details">
-                  <div className="item-trackInfo">
-                    <p className="item-title">{item.name}</p>
-                    <p className="item-album">{item.album.name}</p>
+      {data ? (
+        <ul>
+          {data?.items
+            ? data.items.map((item, index) => (
+                <li key={item.id} className="item-list">
+                  <span className="item-index">{index + 1}</span>
+                  <a
+                    className="item-image"
+                    href={`https://open.spotify.com/track/${item.id}`}
+                    target="_blank"
+                  >
+                    <img src={item.album.images[1].url} alt={item.album.name} />
+                  </a>
+                  <div className="item-details">
+                    <div className="item-trackInfo">
+                      <p className="item-title">{item.name}</p>
+                      <p className="item-album">{item.album.name}</p>
+                    </div>
+                    <div className="item-artistInfo">
+                      {item.artists.map((artist, index) => (
+                        <span key={index}>
+                          {(index ? ", " : "") + artist.name}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="item-artistInfo">
-                    {item.artists.map((artist, index) => (
-                      <span key={index}>
-                        {(index ? ", " : "") + artist.name}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </li>
-            ))
-          : null}
-      </ul>
+                </li>
+              ))
+            : null}
+        </ul>
+      ) : (
+        <div className="loading">
+          <Spinner animation="border" variant="success" />
+        </div>
+      )}
     </div>
   );
 };

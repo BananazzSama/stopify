@@ -16,7 +16,7 @@ import "./components/NavBar/TimeRangeNav.scss";
 
 const App = () => {
   return (
-    <div>
+    <div className="page">
       <Navbar />
       <div className="main-content">
         <Routes>
